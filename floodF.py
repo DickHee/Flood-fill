@@ -7,17 +7,13 @@ import pylab
 import matplotlib
 from matplotlib import pyplot as plt
 
-imgA = imio.imread("./blob3.png")
+imgA = imio.imread("./testbilder/blob5.png")
 imgA = imgA[:,:,0]
 full_image = (imgA>200)*1
 full_image_dim = full_image.shape
 
-print("image dim:",full_image_dim)
-print("Full: ",full_image)
-
-
-
-print("somestuff\n",(full_image==1)*1)
+#print("image dim:",full_image_dim)
+#print("Full: ",full_image)
 
 
 def floodFill(x,y,cluster_id):
@@ -89,9 +85,9 @@ if nbr_clusters>0:
         c_a=np.sum(current_cluster)
         cluster_areas.append(c_a)
 
-        print(c_a)
-        print("hmmm:\n",np.multiply(coordinates[0,:,:],current_cluster))
-        print("hmmm:\n",np.multiply(coordinates[1,:,:],current_cluster))
+        #print(c_a)
+        #print("hmmm:\n",np.multiply(coordinates[0,:,:],current_cluster))
+        #print("hmmm:\n",np.multiply(coordinates[1,:,:],current_cluster))
 
         c_x = round(np.sum(np.multiply(coordinates[0,:,:],current_cluster))/c_a)
         c_y = round(np.sum(np.multiply(coordinates[1,:,:],current_cluster))/c_a)
